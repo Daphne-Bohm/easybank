@@ -1,0 +1,98 @@
+header{
+    padding: 1em 0;
+    background-color: $white;
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        width: 90%;
+        margin: auto;
+        .nav-toggle{
+            .icon-position{
+                position: absolute;
+                top: 10px;
+                right: 0;
+                cursor: pointer;
+            }
+        }
+        .nav__list{
+            position: absolute;
+            top: -100em;
+            text-align: center;
+            width: 100%;
+            margin: auto;
+            background-color: $white;
+            border-radius: 10px;
+            padding: 2em 0;
+            .nav__list__item + .nav__list__item{
+                margin-top: 1.75em;
+            }
+        }
+    }
+}
+
+
+.nav__list__link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, $lime-green, $bright-cyan);
+    transition: width .3s;
+}
+
+.nav__list__link:hover::after {
+    width: 100%;
+}
+
+
+/*      JS       */
+.hidden{
+    visibility: hidden;
+}
+
+.animate-slide-down{
+    animation: slideDown .9s ease forwards;
+}
+
+@keyframes slideDown{
+    100%{
+        top: 5em;
+    }
+}
+
+/*      MEDIA       */
+@media only screen and (min-width: 800px) {
+    header{
+        padding: 1em 0;
+        background-color: $white;
+        nav{
+            .nav-toggle{
+                display: none;
+            }
+            .logo-container{
+                width: 20%;
+            }
+            .nav__list{
+                position: static;
+                display: flex;
+                justify-content: space-between;
+                width: 40%;
+                padding: 0;
+                .nav__list__item + .nav__list__item{
+                    margin-top: 0;
+                }
+            }
+            .nav-btn{
+                width: 40%;
+            }
+        }
+    }
+    
+    /*      JS       */
+    .hidden{
+        visibility: visible;
+    }
+}
+
