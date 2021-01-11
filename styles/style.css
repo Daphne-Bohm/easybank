@@ -206,12 +206,21 @@ header nav .nav__list .nav__list__item + .nav__list__item {
 }
 
 .hero .hero__container .hero__left {
-  float: right;
+  background-image: url("../images/bg-intro-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: right 0 top;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .hero .hero__container .hero__left .hero__image {
-  max-width: 500px;
-  width: 100%;
+  width: 500px;
+  display: block;
 }
 
 .hero .hero__container .hero__right {
@@ -225,6 +234,33 @@ header nav .nav__list .nav__list__item + .nav__list__item {
   max-width: 500px;
 }
 
+@media only screen and (min-width: 375px) {
+  .hero {
+    background-color: #fafafa;
+  }
+  .hero .hero__container {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  .hero .hero__container .hero__left {
+    background-image: url("../images/bg-intro-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: right -400px top -400px;
+    width: 100%;
+  }
+  .hero .hero__container .hero__left .hero__image {
+    width: 500px;
+  }
+  .hero .hero__container .hero__right {
+    margin-top: 1em;
+    padding-bottom: 2.5em;
+  }
+  .hero .hero__container .hero__right p {
+    margin: 1em 0;
+    max-width: 500px;
+  }
+}
+
 @media only screen and (min-width: 800px) {
   .hero .hero__container {
     display: -webkit-box;
@@ -234,20 +270,16 @@ header nav .nav__list .nav__list__item + .nav__list__item {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
   .hero .hero__container .hero__left {
     width: 50%;
   }
   .hero .hero__container .hero__right {
-    margin-top: 1em;
-    margin-right: 1.5em;
+    margin: 1em 1.5em;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
-    width: 50%;
+    max-width: 500px;
     padding: 5.5em 0;
   }
   .hero .hero__container .hero__right p {
@@ -370,7 +402,7 @@ footer .footer-btn {
         -ms-flex-pack: justify;
             justify-content: space-between;
     text-align: start;
-    padding: 2em 0 3em 0;
+    padding: 0;
   }
   .footer .social__media__list {
     margin: 3.6em 0 0 0;
